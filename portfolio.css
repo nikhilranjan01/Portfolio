@@ -616,3 +616,12 @@ margin-bottom: 3rem;
     }
 }
 
+#success-msg {
+    display: none;
+    color: green;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 2rem; /* Increase font size */
+    font-weight: bold; /* Make it bold */
+}
+
