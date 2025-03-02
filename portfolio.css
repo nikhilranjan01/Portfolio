@@ -582,3 +582,37 @@ margin-bottom: 3rem;
         width: 100%;
     }
 }
+
+
+
+/* Make the contact form responsive */
+.contact form {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact form .input-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.contact form .input-box input {
+    width: 100%; /* Make input fields full width on smaller screens */
+    padding: 1.2rem;
+}
+
+.contact form textarea {
+    width: 100%;
+    padding: 1.2rem;
+    resize: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact form .input-box {
+        flex-direction: column;
+    }
+}
+

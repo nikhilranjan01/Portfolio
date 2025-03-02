@@ -208,25 +208,30 @@
      </section>
 
 
-     
      <!-- Contact section -->
-     <section class="contact" id="Contact">
-        <h2 class="heading">Contact <span class="ran">Me</span></h2>
+<section class="contact" id="Contact">
+    <h2 class="heading">Contact <span class="ran">Me</span></h2>
 
-        <form action="#">
-            <div class="input-box">
-                <input type="text" placeholder="Full Name">
-                <input type="email" placeholder="Email Address">
-            </div>
+    <form id="contact-form"> <!-- Add an ID to target it in JavaScript -->
+        <div class="input-box">
+            <input type="text" id="name" placeholder="Full Name" required>
+            <input type="email" id="email" placeholder="Email Address" required>
+        </div>
 
-            <div class="input-box">
-                <input type="number" placeholder="Mobile Number">
-                <input type="text" placeholder="Email Subject">
-            </div>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-            <input type="submit" value="Send Message" class="btn">
-        </form>
-     </section>
+        <div class="input-box">
+            <input type="tel" id="phone" placeholder="Mobile Number" required>
+            <input type="text" id="subject" placeholder="Email Subject" required>
+        </div>
+
+        <textarea id="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+        <input type="submit" value="Send Message" class="btn">
+    </form>
+
+    <!-- Success message -->
+    <p id="success-msg" style="display: none; color: green; text-align: center; margin-top: 10px;">
+        Message sent successfully!
+    </p>
+</section>
 
 <!-- footer design -->
 

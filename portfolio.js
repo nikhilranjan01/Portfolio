@@ -59,3 +59,50 @@ const typed = new Typed('.multiple-text', {
     backDelay:100,
     loop:true,
 })
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Get the contact form
+    let contactForm = document.getElementById("contact-form");
+
+    if (contactForm) {
+        contactForm.addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get form values
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let phone = document.getElementById("phone").value.trim();
+            let subject = document.getElementById("subject").value.trim();
+            let message = document.getElementById("message").value.trim();
+
+            // Basic validation
+            if (!name || !email || !phone || !subject || !message) {
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            // Prepare data for submission
+            let mailData = { name, email, phone, subject, message };
+
+            // Send data using Fetch API to Formspree
+            fetch("https://formspree.io/f/meoepjze", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(mailData)
+            })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById("success-msg").style.display = "block";
+                    contactForm.reset(); // Reset form after successful submission
+                } else {
+                    alert("Error sending message. Please try again.");
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("Something went wrong. Please try again later.");
+            });
+        });
+    }
+});
