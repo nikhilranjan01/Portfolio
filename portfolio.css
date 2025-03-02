@@ -618,7 +618,7 @@ margin-bottom: 3rem;
 
 #success-msg {
     display: none;
-    color: green;
+    color: black;
     text-align: center;
     margin-top: 10px;
     font-size: 2rem; /* Increase font size */
