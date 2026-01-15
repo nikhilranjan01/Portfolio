@@ -655,3 +655,50 @@ span {
     font-weight: bold;
     /* Make it bold */
 }
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 9%;
+    background: var(--snd-bf-color);
+}
+
+.footer-text p {
+    font-size: 1.4rem;
+    color: black;
+}
+
+.footer-iconTop a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: white;
+    border: 0.2rem solid red;
+    border-radius: 50%;
+    transition: 0.3s ease;
+}
+
+.footer-iconTop a i {
+    font-size: 2rem;
+    color: black;
+}
+
+.footer-iconTop a:hover {
+    background: red;
+}
+
+.footer-iconTop a:hover i {
+    color: white;
+}
+
+/* Mobile fix */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+}
+
